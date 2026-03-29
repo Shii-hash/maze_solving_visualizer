@@ -30,6 +30,10 @@ Pathfinding is a fundamental problem in AI — used in GPS navigation, game AI, 
 - Compare algorithms on the same maze by pressing 1, 2, 3
 - Adjustable maze size and animation speed via CLI
 
+## UI overview
+<img width="736" height="852" alt="image" src="https://github.com/user-attachments/assets/44582990-1a62-4cc1-91f6-02b928f52039" />
+
+
 ---
 
 ## Requirements
