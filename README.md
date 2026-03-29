@@ -38,3 +38,72 @@ Pathfinding is a fundamental problem in AI — used in GPS navigation, game AI, 
 - A display (monitor)
 
 ---
+
+## Setup
+
+```bash
+git clone https://github.com/<your-username>/maze-solver.git
+cd maze-solver
+pip install -r requirements.txt
+```
+
+---
+
+## How to Run
+
+```bash
+# Default (21x21 maze, medium speed)
+python maze_solver.py
+
+# Custom maze size
+python maze_solver.py --size 31
+
+# Animation speed
+python maze_solver.py --speed fast
+python maze_solver.py --speed slow
+
+# Combine
+python maze_solver.py --size 25 --speed fast
+```
+
+---
+
+## Controls
+
+| Key | Action |
+|---|---|
+| `1` | Run A* Search |
+| `2` | Run Breadth-First Search |
+| `3` | Run Depth-First Search |
+| `R` | Generate new random maze |
+| `SPACE` | Pause / Resume |
+| `ESC` | Quit |
+
+---
+
+## CLI Options
+
+| Flag | Default | Description |
+|---|---|---|
+| `--size N` | 21 | Maze grid size (odd number recommended) |
+| `--speed` | medium | Animation speed: `slow`, `medium`, `fast` |
+
+---
+
+## Project Structure
+
+```
+maze-solver/
+├── maze_solver.py    # Main application
+├── requirements.txt  # Dependencies
+└── README.md         # This file
+```
+
+---
+
+## How It Works
+
+1. **Maze Generation** — Recursive Backtracker (DFS-based) carves passages through a grid of walls, producing a perfect maze with exactly one path between any two points.
+2. **Algorithm runs** — The selected algorithm explores the maze step by step, yielding its current state (visited nodes, frontier) at each step.
+3. **Visualization** — Pygame renders each state in real time, color-coding visited nodes, the active frontier, and the final solution path.
+4. **Comparison** — Running different algorithms on the same maze shows clearly why A* visits far fewer nodes than BFS, and why DFS finds a path quickly but not optimally.
